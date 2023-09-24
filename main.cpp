@@ -4,23 +4,24 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS]; // NELEMENTS helyett N_ELEMENTS kellene
-    std::cout << '1-100 ertekek duplazasa' // Hiányzó << std::endl;
-    for (int i = 0;) // Hiányos for loop
+    int *b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa" << std::endl;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
         b[i] = i * 2;
     }
-    for (int i = 0; i; i++) // Hiányzó feltétel
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:" // Hiányzó << b[i] << std::endl;
+        std::cout << "Ertek: " << b[i] << std::endl;
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag; // Nem inicializált változó
-    for (int i = 0; i < N_ELEMENTS, i++) // ; helyett , van
+    int atlag = 0;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i] // Hiányzó ;
+        atlag += b[i];
     }
-    atlag /= N_ELEMENTS; // 0-val való osztás nincs ellenőrizve
+    atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
+    delete[] b;
     return 0;
 }
