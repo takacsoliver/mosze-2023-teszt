@@ -23,5 +23,7 @@ int main()
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
     delete[] b;
+
+    std::cout << "Hozzáírtam az feladatban meghatározottak szerint szöveget. Feladtat teljesítve." << std::endl;
     return 0;
 }
